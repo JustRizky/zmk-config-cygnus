@@ -20,6 +20,6 @@
 ---
 include:
   - board: nrfmicro_13
-    shield: corne_left
+    shield: cygnus_left
   - board: nrfmicro_13
-    shield: corne_right
+    shield: cygnus_right
