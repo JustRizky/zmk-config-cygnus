@@ -9,8 +9,6 @@
         , <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>
         , <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>
         ;
-    debounce-press-ms = <15>;
-    debounce-release-ms = <15>;
 };
 
 
