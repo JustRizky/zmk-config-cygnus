@@ -16,6 +16,15 @@
     combos {
         compatible = "zmk,combos";
 
+        sd_shift: sd_shift {
+            bindings = <&os_shift>;
+            key-positions = <11 12>;
+        };
+        sd_caps: sd_caps {
+            bindings = <&kp CAPSLOCK>;
+            key-positions = <11 12>;
+            timeout-ms = <300>;
+        };
         rt_lparen {
             bindings = <&kp LPAR>;
             key-positions = <3 4>;
@@ -73,6 +82,17 @@
             quick-tap-ms = <0>;
             bindings = <&kp>, <&mo>;
         };
+        os_shift: os_shift {
+            compatible = "zmk,behavior-one-shot";
+            label = "OS_SHIFT";
+            #binding-cells = <0>;
+            bindings = <&kp LSHIFT>;
+        };
+        caps_toggle: caps_toggle {
+            compatible = "zmk,behavior-key-press";
+            label = "CAPS_TOGGLE";
+            bindings = <&kp CAPSLOCK>;
+        };
     };
 
     keymap {
@@ -80,10 +100,10 @@
 
         default_layer {
             bindings = <
-&kp Q       &kp W       &kp E       &kp R       &kp T           &kp Y    &kp U          &kp I           &kp O         &kp P
-&kp A       &kp S       &kp D       &kp F       &kp G           &kp H    &kp J          &kp K           &kp L         &kp SEMI
-&mt LSFT Z  &mt LALT X  &mt LCTL C  &mt LGUI V  &kp B           &kp N    &mt RGUI M     &mt RCTL COMMA  &mt RALT DOT  &mt RSFT FSLH
-                        &kp LALT    &mo 1       &mt LGUI TAB    &mtmo SPC 2  &mt LCTL BSPC  &mt RSFT ENT
+&kp Q        &kp W       &kp E        &kp R       &kp T           &kp Y      &kp U             &kp I            &kp O         &kp P
+&kp A        &kp S       &kp D        &kp F       &kp G           &kp H      &kp J             &kp K            &kp L         &kp SEMI
+&mt LSHFT Z  &mt LALT X  &mt LCTRL C  &mt LGUI V  &kp B           &kp N      &mt RGUI M        &mt RCTRL COMMA  &mt RALT DOT  &mt RSHFT FSLH
+                        &kp LALT      &mo 1       &mt LGUI TAB    &kp SPACE  &mt LCTRL BSPC  &mt RSHFT RET
             >;
         };
 
