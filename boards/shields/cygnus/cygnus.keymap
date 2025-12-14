@@ -80,7 +80,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            bindings = <&os_shift>, <&kp CAPSLOCK>;
+            bindings = <&os LSHFT>, <&kp CAPSLOCK>;
         };
     };
 
