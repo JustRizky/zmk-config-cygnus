@@ -16,15 +16,6 @@
     combos {
         compatible = "zmk,combos";
 
-        sd_shift: sd_shift {
-            bindings = <&os_shift>;
-            key-positions = <11 12>;
-        };
-        sd_caps: sd_caps {
-            bindings = <&kp CAPSLOCK>;
-            key-positions = <11 12>;
-            timeout-ms = <300>;
-        };
         rt_lparen {
             bindings = <&kp LPAR>;
             key-positions = <3 4>;
@@ -81,15 +72,6 @@
             tapping-term-ms = <200>;
             quick-tap-ms = <0>;
             bindings = <&kp>, <&mo>;
-        };
-        os_shift: os_shift {
-            compatible = "zmk,behavior-one-shot";
-            #binding-cells = <0>;
-            bindings = <&kp LSHIFT>;
-        };
-        caps_toggle: caps_toggle {
-            compatible = "zmk,behavior-key-press";
-            bindings = <&kp CAPSLOCK>;
         };
     };
 
