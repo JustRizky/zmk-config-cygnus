@@ -15,7 +15,7 @@
     combos {
         compatible = "zmk,combos";
         sd_shift {
-            bindings = <&os LSHFT>;
+            bindings = <&td0>;
             key-positions = <11 12>;
         };
         rt_lparen {
@@ -61,13 +61,6 @@
             bindings = <&kp>, <&kp>;
             display-name = "Mod-Tap";
         };
-        mtmo: behavior_mtmo {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            bindings = <&kp>, <&mo>;
-        };
         os: os {
             compatible = "zmk,behavior-sticky-key";
             #binding-cells = <1>;
@@ -76,7 +69,7 @@
             quick-release;
             ignore-modifiers;
         };
-        td_shift_caps: tap_dance_shift_caps {
+        td0: tap_dance_0 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
@@ -89,10 +82,10 @@
 
         default_layer {
             bindings = <
-&kp Q        &kp W       &kp E        &kp R       &kp T           &kp Y      &kp U             &kp I            &kp O         &kp P
-&kp A        &kp S       &kp D        &kp F       &kp G           &kp H      &kp J             &kp K            &kp L         &kp SEMI
-&mt LSHFT Z  &mt LALT X  &mt LCTRL C  &mt LGUI V  &kp B           &kp N      &mt RGUI M        &mt RCTRL COMMA  &mt RALT DOT  &mt RSHFT FSLH
-                        &kp LALT      &mo 1       &mt LGUI TAB    &kp SPACE  &mt LCTRL BSPC  &mt RSHFT RET
+&kp Q        &kp W       &kp E        &kp R       &kp T           &kp Y            &kp U           &kp I            &kp O         &kp P
+&kp A        &kp S       &kp D        &kp F       &kp G           &kp H            &kp J           &kp K            &kp L         &kp SEMI
+&mt LSHFT Z  &mt LALT X  &mt LCTRL C  &mt LGUI V  &kp B           &kp N            &mt RGUI M      &mt RCTRL COMMA  &mt RALT DOT  &mt RSHFT FSLH
+                        &kp LALT      &mo 1       &mt LGUI TAB    &mt MO(1) SPACE  &mt LCTRL BSPC  &mt RSHFT RET
             >;
         };
 
