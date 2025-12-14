@@ -75,7 +75,7 @@
             release-after-ms = <1000>;
             quick-release;
             ignore-modifiers;
-        }
+        };
         td_shift_caps: tap_dance_shift_caps {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <2>;
