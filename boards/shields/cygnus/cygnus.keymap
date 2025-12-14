@@ -16,7 +16,7 @@
         compatible = "zmk,combos";
         sd_shift {
             binding = <&os LSHFT>;
-            key-positions <11 12>;
+            key-positions = <11 12>;
         }
         rt_lparen {
             bindings = <&kp LPAR>;
