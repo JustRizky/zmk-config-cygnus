@@ -68,18 +68,19 @@
     };
 
     behaviors {
-        mt: mt {
-            compatible = "zmk,behavior-mod-tap";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
+        mt: mod_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
             flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&kp>, <&kp>;
+            display-name = "Mod-Tap";
         };
         mtmo: behavior_mtmo {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
             bindings = <&kp>, <&mo>;
         };
         os_shift: os_shift {
