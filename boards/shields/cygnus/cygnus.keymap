@@ -74,30 +74,21 @@
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
         };
-        spc_lt: spc_lt {
+        mtmo: behavior_mtmo {
             compatible = "zmk,behavior-hold-tap";
-            label = "SPC_LT";
-
             #binding-cells = <2>;
+            flavor = "tap-preferred";
             tapping-term-ms = <200>;
             quick-tap-ms = <0>;
-
-            flavor = "tap-preferred";
-
-            bindings = <
-                &kp SPC
-                &mo 2
-            >;
+            bindings = <&kp>, <&mo>;
         };
         os_shift: os_shift {
             compatible = "zmk,behavior-one-shot";
-            label = "OS_SHIFT";
             #binding-cells = <0>;
             bindings = <&kp LSHIFT>;
         };
         caps_toggle: caps_toggle {
             compatible = "zmk,behavior-key-press";
-            label = "CAPS_TOGGLE";
             bindings = <&kp CAPSLOCK>;
         };
     };
@@ -110,7 +101,7 @@
 &kp Q       &kp W       &kp E       &kp R       &kp T           &kp Y    &kp U          &kp I           &kp O         &kp P
 &kp A       &kp S       &kp D       &kp F       &kp G           &kp H    &kp J          &kp K           &kp L         &kp SEMI
 &mt LSFT Z  &mt LALT X  &mt LCTL C  &mt LGUI V  &kp B           &kp N    &mt RGUI M     &mt RCTL COMMA  &mt RALT DOT  &mt RSFT FSLH
-                        &kp LALT    &mo 1       &mt LGUI TAB    &spc_lt  &mt LCTL BSPC  &mt RSFT ENT
+                        &kp LALT    &mo 1       &mt LGUI TAB    &mtmo SPC 2  &mt LCTL BSPC  &mt RSFT ENT
             >;
         };
 
@@ -125,7 +116,7 @@
 
         nav_layer {
             bindings = <
-&trans    &trans          &bt BT_CLR      &bt BT_SEL 0  &bt BT_SEL 1       &kp LC(TAB) &kp LG(LEFT)    &kp LG(RIGHT) &kp LC(TAB)      &kp LG(N4)
+&trans    &trans          &bt BT_CLR      &bt BT_SEL 0  &bt BT_SEL 1       &kp LS(LC(TAB)) &kp LG(LEFT)    &kp LG(RIGHT) &kp LC(TAB)      &kp LS(LG(N4))
 &kp CAPS  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT    &kp LEFT        &kp DOWN        &kp UP        &kp RIGHT        &kp LG(C)
 &kp LSFT  &trans          &trans          &mkp MB2      &mkp MB1           &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &kp LG(V)
                           &trans          &trans        &trans             &trans          &trans          &trans
