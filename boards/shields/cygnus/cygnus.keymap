@@ -6,8 +6,7 @@
 / {
     conditional_layers {
         compatible = "zmk,conditional-layers";
-
-        tri_layer_1_2_3 {
+        tri_layer {
             if-layers = <1 2>;
             then-layer = <3>;
         };
@@ -15,55 +14,37 @@
 
     combos {
         compatible = "zmk,combos";
-
-        sd_shift: sd_shift {
-            bindings = <&os_shift>;
-            key-positions = <11 12>;
-        };
-        sd_caps: sd_caps {
-            bindings = <&kp CAPSLOCK>;
-            key-positions = <11 12>;
-            timeout-ms = <300>;
-        };
         rt_lparen {
             bindings = <&kp LPAR>;
             key-positions = <3 4>;
-            timeout-ms = <40>;
         };
         fg_lbrace {
             bindings = <&kp LBRC>;
             key-positions = <13 14>;
-            timeout-ms = <40>;
         };
         vb_lbracket {
             bindings = <&kp LBKT>;
             key-positions = <23 24>;
-            timeout-ms = <40>;
         };
         yu_rparen {
             bindings = <&kp RPAR>;
             key-positions = <5 6>;
-            timeout-ms = <40>;
         };
         hj_rbracket {
             bindings = <&kp RBKT>;
             key-positions = <15 16>;
-            timeout-ms = <40>;
         };
         nm_rbrace {
             bindings = <&kp RBRC>;
             key-positions = <25 26>;
-            timeout-ms = <40>;
         };
         jk_esc {
             bindings = <&kp ESC>;
             key-positions = <16 17>;
-            timeout-ms = <40>;
         };
         lsemi_grave {
             bindings = <&kp SQT>;
             key-positions = <18 19>;
-            timeout-ms = <40>;
         };
     };
 
@@ -82,12 +63,6 @@
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
             bindings = <&kp>, <&mo>;
-        };
-        os_shift: os_shift {
-            compatible = "zmk,behavior-one-shot";
-            label = "OS_SHIFT";
-            #binding-cells = <0>;
-            bindings = <&kp LSHIFT>;
         };
     };
 
