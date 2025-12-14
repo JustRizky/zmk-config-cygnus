@@ -14,6 +14,10 @@
 
     combos {
         compatible = "zmk,combos";
+        sd_shift {
+            binding = <&os LSHFT>;
+            key-positions <11 12>;
+        }
         rt_lparen {
             bindings = <&kp LPAR>;
             key-positions = <3 4>;
@@ -64,6 +68,14 @@
             tapping-term-ms = <200>;
             bindings = <&kp>, <&mo>;
         };
+        os: os {
+            compatible = "zmk,behavior-sticky-key";
+            #binding-cells = <1>;
+            bindings = <&kp>;
+            release-after-ms = <1000>;
+            quick-release;
+            ignore-modifiers;
+        }
     };
 
     keymap {
