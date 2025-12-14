@@ -17,7 +17,7 @@
         sd_shift {
             binding = <&os LSHFT>;
             key-positions = <11 12>;
-        }
+        };
         rt_lparen {
             bindings = <&kp LPAR>;
             key-positions = <3 4>;
@@ -76,6 +76,12 @@
             quick-release;
             ignore-modifiers;
         }
+        td_shift_caps: tap_dance_shift_caps {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            bindings = <&os_shift>, <&kp CAPSLOCK>;
+        };
     };
 
     keymap {
