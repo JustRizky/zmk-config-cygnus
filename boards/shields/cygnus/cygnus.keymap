@@ -91,7 +91,7 @@
         };
         caps_toggle: caps_toggle {
             compatible = "zmk,behavior-key-press";
-            #binding-cells = <0>;
+            #binding-cells = <1>;
             bindings = <&kp CAPSLOCK>;
         };
     };
